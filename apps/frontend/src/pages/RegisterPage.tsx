@@ -12,6 +12,7 @@ import { useAuth } from '@/hooks/useAuth';
 
 const schema = z
   .object({
+    name: z.string().min(1, 'Nome obrigatório'),
     email: z.string().email('Email inválido'),
     password: z.string().min(8, 'Senha deve ter no mínimo 8 caracteres'),
     confirmPassword: z.string(),
@@ -38,7 +39,7 @@ export function RegisterPage() {
     setServerError('');
     const res = await apiFetch('/auth/register', {
       method: 'POST',
-      body: JSON.stringify({ email: values.email, password: values.password }),
+      body: JSON.stringify({ name: values.name, email: values.email, password: values.password }),
     });
     const data = await res.json();
     if (!res.ok) {
@@ -46,7 +47,7 @@ export function RegisterPage() {
       return;
     }
     login(data.token, data.user);
-    navigate('/');
+    navigate('/home');
   };
 
   return (
@@ -63,6 +64,11 @@ export function RegisterPage() {
 
         <div className="rounded-xl border border-border bg-card p-6 shadow-sm">
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+            <div className="space-y-1.5">
+              <Label htmlFor="name">Nome completo</Label>
+              <Input id="name" type="text" placeholder="Seu nome" {...register('name')} />
+              {errors.name && <p className="text-xs text-destructive">{errors.name.message}</p>}
+            </div>
             <div className="space-y-1.5">
               <Label htmlFor="email">Email</Label>
               <Input id="email" type="email" placeholder="you@email.com" {...register('email')} />

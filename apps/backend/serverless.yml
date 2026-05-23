@@ -64,6 +64,30 @@ functions:
           method: get
           cors:
             origin: ${env:CORS_ORIGIN, '*'}
+  updateProfile:
+    handler: src/handlers/users/update-profile.handler
+    events:
+      - http:
+          path: /users/me
+          method: patch
+          cors:
+            origin: ${env:CORS_ORIGIN, '*'}
+  changePassword:
+    handler: src/handlers/users/change-password.handler
+    events:
+      - http:
+          path: /users/me/password
+          method: patch
+          cors:
+            origin: ${env:CORS_ORIGIN, '*'}
+  todoStats:
+    handler: src/handlers/todos/stats.handler
+    events:
+      - http:
+          path: /todos/stats
+          method: get
+          cors:
+            origin: ${env:CORS_ORIGIN, '*'}
   listTodos:
     handler: src/handlers/todos/list.handler
     events:

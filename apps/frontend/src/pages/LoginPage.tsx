@@ -40,7 +40,7 @@ export function LoginPage() {
       return;
     }
     login(data.token, data.user);
-    navigate('/');
+    navigate('/home');
   };
 
   return (

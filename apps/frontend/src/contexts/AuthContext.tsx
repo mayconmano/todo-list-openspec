@@ -1,8 +1,11 @@
 import { createContext, useContext, useState, type ReactNode } from 'react';
 
-interface User {
+export interface User {
   id: number;
   email: string;
+  name: string;
+  birth_date: string | null;
+  avatar_url: string | null;
 }
 
 interface AuthState {
@@ -13,6 +16,7 @@ interface AuthState {
 interface AuthContextValue extends AuthState {
   login: (token: string, user: User) => void;
   logout: () => void;
+  updateUser: (partial: Partial<User>) => void;
 }
 
 const AuthContext = createContext<AuthContextValue | null>(null);
@@ -48,8 +52,17 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     setState({ token: null, user: null });
   };
 
+  const updateUser = (partial: Partial<User>) => {
+    setState((prev) => {
+      if (!prev.user) return prev;
+      const updated = { ...prev.user, ...partial };
+      localStorage.setItem(USER_KEY, JSON.stringify(updated));
+      return { ...prev, user: updated };
+    });
+  };
+
   return (
-    <AuthContext.Provider value={{ ...state, login, logout }}>
+    <AuthContext.Provider value={{ ...state, login, logout, updateUser }}>
       {children}
     </AuthContext.Provider>
   );

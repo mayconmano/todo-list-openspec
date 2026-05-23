@@ -12,7 +12,8 @@
       "PowerShell(New-Item -ItemType Directory -Force \"c:\\\\Users\\\\Acer\\\\Documents\\\\claude\\\\todo-list-openspec\\\\openspec\\\\changes\\\\deploy-producao-cicd\\\\specs\\\\cicd-pipeline\")",
       "PowerShell(New-Item -ItemType Directory -Force \"c:\\\\Users\\\\Acer\\\\Documents\\\\claude\\\\todo-list-openspec\\\\openspec\\\\changes\\\\deploy-producao-cicd\\\\specs\\\\project-structure\")",
       "Bash(ls openspec/changes/archive/)",
-      "Bash(ls .claude/rules/)"
+      "Bash(ls .claude/rules/)",
+      "Bash(npx tsc *)"
     ]
   }
 }

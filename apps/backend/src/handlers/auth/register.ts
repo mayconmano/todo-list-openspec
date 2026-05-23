@@ -8,15 +8,18 @@ import { json } from '../../lib/response';
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 export const handler: APIGatewayProxyHandler = async (event) => {
-  let body: { email?: unknown; password?: unknown };
+  let body: { name?: unknown; email?: unknown; password?: unknown };
   try {
     body = JSON.parse(event.body ?? '{}');
   } catch {
     return json(422, { error: 'Dados inválidos' });
   }
 
-  const { email, password } = body;
+  const { name, email, password } = body;
 
+  if (typeof name !== 'string' || name.trim().length === 0) {
+    return json(422, { error: 'Dados inválidos' });
+  }
   if (typeof email !== 'string' || !EMAIL_RE.test(email)) {
     return json(422, { error: 'Dados inválidos' });
   }
@@ -41,10 +44,14 @@ export const handler: APIGatewayProxyHandler = async (event) => {
   const [result] = await db.insert(schema.users).values({
     email: normalizedEmail,
     password: hash,
+    name: name.trim(),
   });
 
   const id = (result as { insertId: number }).insertId;
   const token = signToken({ sub: id, email: normalizedEmail });
 
-  return json(201, { token, user: { id, email: normalizedEmail } });
+  return json(201, {
+    token,
+    user: { id, email: normalizedEmail, name: name.trim(), birth_date: null, avatar_url: null },
+  });
 };

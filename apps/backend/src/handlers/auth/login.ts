@@ -38,5 +38,14 @@ export const handler: APIGatewayProxyHandler = async (event) => {
 
   const token = signToken({ sub: user.id, email: user.email });
 
-  return json(200, { token, user: { id: user.id, email: user.email } });
+  return json(200, {
+    token,
+    user: {
+      id: user.id,
+      email: user.email,
+      name: user.name,
+      birth_date: user.birth_date,
+      avatar_url: user.avatar_url,
+    },
+  });
 };

@@ -8,6 +8,9 @@ const meHandler = async (event: AuthenticatedEvent) => {
     .select({
       id: schema.users.id,
       email: schema.users.email,
+      name: schema.users.name,
+      birth_date: schema.users.birth_date,
+      avatar_url: schema.users.avatar_url,
       created_at: schema.users.created_at,
     })
     .from(schema.users)

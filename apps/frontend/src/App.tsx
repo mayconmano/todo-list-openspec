@@ -2,7 +2,10 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import { LoginPage } from './pages/LoginPage';
 import { RegisterPage } from './pages/RegisterPage';
 import { TodosPage } from './pages/TodosPage';
+import { HomePage } from './pages/HomePage';
+import { AccountPage } from './pages/AccountPage';
 import { ProtectedRoute } from './components/ProtectedRoute';
+import { AppLayout } from './components/layout/AppLayout';
 
 function App() {
   return (
@@ -10,15 +13,19 @@ function App() {
       <Route path="/login" element={<LoginPage />} />
       <Route path="/register" element={<RegisterPage />} />
       <Route
-        path="/todos"
         element={
           <ProtectedRoute>
-            <TodosPage />
+            <AppLayout />
           </ProtectedRoute>
         }
-      />
-      <Route path="/" element={<Navigate to="/todos" replace />} />
-      <Route path="*" element={<Navigate to="/todos" replace />} />
+      >
+        <Route path="/home" element={<HomePage />} />
+        <Route path="/tarefas" element={<TodosPage />} />
+        <Route path="/minha-conta" element={<AccountPage />} />
+      </Route>
+      <Route path="/todos" element={<Navigate to="/tarefas" replace />} />
+      <Route path="/" element={<Navigate to="/home" replace />} />
+      <Route path="*" element={<Navigate to="/home" replace />} />
     </Routes>
   );
 }
