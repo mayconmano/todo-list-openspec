@@ -1,8 +1,8 @@
 ## 1. Pré-requisitos
 
-- [ ] 1.1 Criar repositório no GitHub e fazer o primeiro push do projeto
-- [ ] 1.2 Instalar AWS CDK globalmente: `npm install -g aws-cdk`
-- [ ] 1.3 Executar `cdk bootstrap` na conta AWS para preparar o ambiente CDK
+- [x] 1.1 Criar repositório no GitHub e fazer o primeiro push do projeto
+- [x] 1.2 Instalar AWS CDK globalmente: `npm install -g aws-cdk`
+- [x] 1.3 Executar `cdk bootstrap` na conta AWS para preparar o ambiente CDK
 
 ## 2. Infraestrutura CDK — Setup do projeto
 
@@ -35,9 +35,9 @@
 
 ## 6. Deploy da infraestrutura
 
-- [ ] 6.1 Executar `cdk synth` em `infra/` e verificar que os três templates são gerados sem erros
-- [ ] 6.2 Executar `cdk deploy --all` e confirmar criação dos recursos na AWS
-- [ ] 6.3 Anotar os outputs: endpoint do RDS, URL do CloudFront, Access Key ID e Secret do IAM user
+- [x] 6.1 Executar `cdk synth` em `infra/` e verificar que os três templates são gerados sem erros
+- [x] 6.2 Executar `cdk deploy --all` e confirmar criação dos recursos na AWS
+- [x] 6.3 Anotar os outputs: endpoint do RDS, URL do CloudFront, Access Key ID e Secret do IAM user
 
 ## 7. Backend — Configuração do stage prod
 
@@ -72,18 +72,18 @@
 
 ## 11. Configuração dos GitHub Secrets
 
-- [ ] 11.1 Adicionar secret `AWS_ACCESS_KEY_ID` com o valor do output da `IamStack`
-- [ ] 11.2 Adicionar secret `AWS_SECRET_ACCESS_KEY` com o valor do output da `IamStack`
-- [ ] 11.3 Adicionar secret `AWS_REGION` com valor `us-east-1`
-- [ ] 11.4 Adicionar secret `DB_HOST` com o endpoint do RDS (output da `RdsStack`)
-- [ ] 11.5 Adicionar secret `DB_PORT` com valor `3306`
-- [ ] 11.6 Adicionar secret `DB_USER` com o usuário do RDS
-- [ ] 11.7 Adicionar secret `DB_PASSWORD` com a senha do RDS
-- [ ] 11.8 Adicionar secret `DB_NAME` com valor `todo_list`
-- [ ] 11.9 Adicionar secret `JWT_SECRET` com valor seguro gerado aleatoriamente
+- [x] 11.1 Adicionar secret `AWS_ACCESS_KEY_ID` com o valor do output da `IamStack`
+- [x] 11.2 Adicionar secret `AWS_SECRET_ACCESS_KEY` com o valor do output da `IamStack`
+- [x] 11.3 Adicionar secret `AWS_REGION` com valor `us-east-1`
+- [x] 11.4 Adicionar secret `DB_HOST` com o endpoint do RDS (output da `RdsStack`)
+- [x] 11.5 Adicionar secret `DB_PORT` com valor `3306`
+- [x] 11.6 Adicionar secret `DB_USER` com o usuário do RDS
+- [x] 11.7 Adicionar secret `DB_PASSWORD` com a senha do RDS
+- [x] 11.8 Adicionar secret `DB_NAME` com valor `todo_list`
+- [x] 11.9 Adicionar secret `JWT_SECRET` com valor seguro gerado aleatoriamente
 - [ ] 11.10 Adicionar secret `VITE_API_URL` com a URL da API Gateway (obtida após primeiro deploy do backend)
-- [ ] 11.11 Adicionar secret `S3_BUCKET_NAME` com o nome do bucket criado pela `FrontendStack`
-- [ ] 11.12 Adicionar secret `CLOUDFRONT_DISTRIBUTION_ID` com o ID da distribuição CloudFront
+- [x] 11.11 Adicionar secret `S3_BUCKET_NAME` com o nome do bucket criado pela `FrontendStack`
+- [x] 11.12 Adicionar secret `CLOUDFRONT_DISTRIBUTION_ID` com o ID da distribuição CloudFront
 
 ## 12. Validação do pipeline
 

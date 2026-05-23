@@ -1,0 +1,138 @@
+{
+  "/RdsStack": [
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "<anonymous> (C:\\Users\\Acer\\Documents\\claude\\todo-list-openspec\\infra\\bin\\app.ts:15:1)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/RdsStack/RdsEndpoint": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "RdsEndpoint"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "new RdsStack (C:\\Users\\Acer\\Documents\\claude\\todo-list-openspec\\infra\\lib\\rds-stack.ts:38:5)",
+        "<anonymous> (C:\\Users\\Acer\\Documents\\claude\\todo-list-openspec\\infra\\bin\\app.ts:15:1)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/RdsStack/BootstrapVersion": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "BootstrapVersion"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/RdsStack/CheckBootstrapVersion": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CheckBootstrapVersion"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/RdsStack/RdsSecurityGroup/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "RdsSecurityGroup632A77E4"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new SecurityGroup2 in aws-cdk-lib...",
+        "new RdsStack (C:\\Users\\Acer\\Documents\\claude\\todo-list-openspec\\infra\\lib\\rds-stack.ts:12:27)",
+        "<anonymous> (C:\\Users\\Acer\\Documents\\claude\\todo-list-openspec\\infra\\bin\\app.ts:15:1)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/RdsStack/Database/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "DatabaseB269D8BB"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new DatabaseInstance2 in aws-cdk-lib...",
+        "new RdsStack (C:\\Users\\Acer\\Documents\\claude\\todo-list-openspec\\infra\\lib\\rds-stack.ts:23:16)",
+        "<anonymous> (C:\\Users\\Acer\\Documents\\claude\\todo-list-openspec\\infra\\bin\\app.ts:15:1)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/RdsStack/CDKMetadata/Default": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CDKMetadata"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib, node internals...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/RdsStack/Database/SubnetGroup/Default": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "DatabaseSubnetGroup7D60F180"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new DatabaseInstance2 in aws-cdk-lib...",
+        "new RdsStack (C:\\Users\\Acer\\Documents\\claude\\todo-list-openspec\\infra\\lib\\rds-stack.ts:23:16)",
+        "<anonymous> (C:\\Users\\Acer\\Documents\\claude\\todo-list-openspec\\infra\\bin\\app.ts:15:1)",
+        "...node internals, ts-node..."
+      ]
+    }
+  ],
+  "/RdsStack/Database/Secret/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "RdsStackDatabaseSecretECD539873fdaad7efa858a3daf9490cf0a702aeb"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new DatabaseInstance2 in aws-cdk-lib...",
+        "new RdsStack (C:\\Users\\Acer\\Documents\\claude\\todo-list-openspec\\infra\\lib\\rds-stack.ts:23:16)",
+        "<anonymous> (C:\\Users\\Acer\\Documents\\claude\\todo-list-openspec\\infra\\bin\\app.ts:15:1)"
+      ]
+    }
+  ],
+  "/RdsStack/Database/Secret/Attachment/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "DatabaseSecretAttachmentE5D1B020"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new DatabaseInstance2 in aws-cdk-lib...",
+        "new RdsStack (C:\\Users\\Acer\\Documents\\claude\\todo-list-openspec\\infra\\lib\\rds-stack.ts:23:16)",
+        "<anonymous> (C:\\Users\\Acer\\Documents\\claude\\todo-list-openspec\\infra\\bin\\app.ts:15:1)",
+        "...node internals, ts-node..."
+      ]
+    }
+  ]
+}

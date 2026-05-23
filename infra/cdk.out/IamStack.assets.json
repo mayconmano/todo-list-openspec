@@ -1,0 +1,21 @@
+{
+  "version": "53.0.0",
+  "files": {
+    "cafaeb815df45cd0ba6ba1221ba0b2c98528f9744aae330a9e542964c885bf94": {
+      "displayName": "IamStack Template",
+      "source": {
+        "path": "IamStack.template.json",
+        "packaging": "file"
+      },
+      "destinations": {
+        "360411403519-us-east-1-ea2f1c42": {
+          "bucketName": "cdk-hnb659fds-assets-360411403519-us-east-1",
+          "objectKey": "cafaeb815df45cd0ba6ba1221ba0b2c98528f9744aae330a9e542964c885bf94.json",
+          "region": "us-east-1",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::360411403519:role/cdk-hnb659fds-file-publishing-role-360411403519-us-east-1"
+        }
+      }
+    }
+  },
+  "dockerImages": {}
+}

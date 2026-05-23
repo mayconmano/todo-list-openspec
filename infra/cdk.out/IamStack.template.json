@@ -1,0 +1,124 @@
+{
+ "Resources": {
+  "CicdUserD183247E": {
+   "Type": "AWS::IAM::User",
+   "Properties": {
+    "UserName": "todo-list-cicd"
+   },
+   "Metadata": {
+    "aws:cdk:path": "IamStack/CicdUser/Resource"
+   }
+  },
+  "CicdUserDefaultPolicy2A544A89": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": [
+        "lambda:*",
+        "apigateway:*",
+        "cloudformation:*",
+        "s3:*",
+        "cloudfront:*",
+        "iam:CreateRole",
+        "iam:DeleteRole",
+        "iam:AttachRolePolicy",
+        "iam:DetachRolePolicy",
+        "iam:GetRole",
+        "iam:PassRole",
+        "iam:PutRolePolicy",
+        "iam:DeleteRolePolicy",
+        "iam:GetRolePolicy",
+        "logs:*"
+       ],
+       "Effect": "Allow",
+       "Resource": "*"
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "CicdUserDefaultPolicy2A544A89",
+    "Users": [
+     {
+      "Ref": "CicdUserD183247E"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "IamStack/CicdUser/DefaultPolicy/Resource"
+   }
+  },
+  "CicdAccessKey": {
+   "Type": "AWS::IAM::AccessKey",
+   "Properties": {
+    "UserName": {
+     "Ref": "CicdUserD183247E"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "IamStack/CicdAccessKey"
+   }
+  },
+  "CDKMetadata": {
+   "Type": "AWS::CDK::Metadata",
+   "Properties": {
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/zPSMzI11zNQTCwv1k1OydbNyUzSqw4uSUzO1kksL47PTMzVqw4tTi3ScU7LA9MB+TmZyZUgLoLlmJycWlzsnVpZC+L5l5YUlJbU6uTlp6TqZRXrlxkZ6RkZ6BkoZhVnZuoWleaVZOam6gVBaAAKcxyNgAAAAA=="
+   },
+   "Metadata": {
+    "aws:cdk:path": "IamStack/CDKMetadata/Default"
+   }
+  }
+ },
+ "Outputs": {
+  "AccessKeyId": {
+   "Description": "IAM Access Key ID for GitHub Actions",
+   "Value": {
+    "Ref": "CicdAccessKey"
+   }
+  },
+  "SecretAccessKey": {
+   "Description": "IAM Secret Access Key for GitHub Actions",
+   "Value": {
+    "Fn::GetAtt": [
+     "CicdAccessKey",
+     "SecretAccessKey"
+    ]
+   }
+  }
+ },
+ "Parameters": {
+  "BootstrapVersion": {
+   "Type": "AWS::SSM::Parameter::Value<String>",
+   "Default": "/cdk-bootstrap/hnb659fds/version",
+   "Description": "Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]"
+  }
+ },
+ "Rules": {
+  "CheckBootstrapVersion": {
+   "Assertions": [
+    {
+     "Assert": {
+      "Fn::Not": [
+       {
+        "Fn::Contains": [
+         [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+         ],
+         {
+          "Ref": "BootstrapVersion"
+         }
+        ]
+       }
+      ]
+     },
+     "AssertDescription": "CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI."
+    }
+   ]
+  }
+ }
+}

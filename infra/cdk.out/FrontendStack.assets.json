@@ -1,0 +1,36 @@
+{
+  "version": "53.0.0",
+  "files": {
+    "faa95a81ae7d7373f3e1f242268f904eb748d8d0fdd306e8a6fe515a1905a7d6": {
+      "displayName": "FrontendStack/Custom::S3AutoDeleteObjectsCustomResourceProvider Code",
+      "source": {
+        "path": "asset.faa95a81ae7d7373f3e1f242268f904eb748d8d0fdd306e8a6fe515a1905a7d6",
+        "packaging": "zip"
+      },
+      "destinations": {
+        "360411403519-us-east-1-7df5189c": {
+          "bucketName": "cdk-hnb659fds-assets-360411403519-us-east-1",
+          "objectKey": "faa95a81ae7d7373f3e1f242268f904eb748d8d0fdd306e8a6fe515a1905a7d6.zip",
+          "region": "us-east-1",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::360411403519:role/cdk-hnb659fds-file-publishing-role-360411403519-us-east-1"
+        }
+      }
+    },
+    "b3ee6f4d7d5825388d74e75208979ce05595e01404eb4d14da2a6542ddcbed0b": {
+      "displayName": "FrontendStack Template",
+      "source": {
+        "path": "FrontendStack.template.json",
+        "packaging": "file"
+      },
+      "destinations": {
+        "360411403519-us-east-1-af1f836d": {
+          "bucketName": "cdk-hnb659fds-assets-360411403519-us-east-1",
+          "objectKey": "b3ee6f4d7d5825388d74e75208979ce05595e01404eb4d14da2a6542ddcbed0b.json",
+          "region": "us-east-1",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::360411403519:role/cdk-hnb659fds-file-publishing-role-360411403519-us-east-1"
+        }
+      }
+    }
+  },
+  "dockerImages": {}
+}

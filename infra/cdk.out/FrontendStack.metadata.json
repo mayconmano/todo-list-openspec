@@ -1,0 +1,209 @@
+{
+  "/FrontendStack": [
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "<anonymous> (C:\\Users\\Acer\\Documents\\claude\\todo-list-openspec\\infra\\bin\\app.ts:16:1)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/FrontendStack/Custom::S3AutoDeleteObjectsCustomResourceProvider": [
+    {
+      "type": "aws:cdk:is-custom-resource-handler-customResourceProvider",
+      "data": true
+    }
+  ],
+  "/FrontendStack/CloudFrontUrl": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CloudFrontUrl"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "new FrontendStack (C:\\Users\\Acer\\Documents\\claude\\todo-list-openspec\\infra\\lib\\frontend-stack.ts:40:5)",
+        "<anonymous> (C:\\Users\\Acer\\Documents\\claude\\todo-list-openspec\\infra\\bin\\app.ts:16:1)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/FrontendStack/BucketName": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "BucketName"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "new FrontendStack (C:\\Users\\Acer\\Documents\\claude\\todo-list-openspec\\infra\\lib\\frontend-stack.ts:45:5)",
+        "<anonymous> (C:\\Users\\Acer\\Documents\\claude\\todo-list-openspec\\infra\\bin\\app.ts:16:1)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/FrontendStack/DistributionId": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "DistributionId"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "new FrontendStack (C:\\Users\\Acer\\Documents\\claude\\todo-list-openspec\\infra\\lib\\frontend-stack.ts:50:5)",
+        "<anonymous> (C:\\Users\\Acer\\Documents\\claude\\todo-list-openspec\\infra\\bin\\app.ts:16:1)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/FrontendStack/BootstrapVersion": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "BootstrapVersion"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/FrontendStack/CheckBootstrapVersion": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CheckBootstrapVersion"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/FrontendStack/FrontendBucket/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "FrontendBucketEFE2E19C"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Bucket2 in aws-cdk-lib...",
+        "new FrontendStack (C:\\Users\\Acer\\Documents\\claude\\todo-list-openspec\\infra\\lib\\frontend-stack.ts:11:20)",
+        "<anonymous> (C:\\Users\\Acer\\Documents\\claude\\todo-list-openspec\\infra\\bin\\app.ts:16:1)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    },
+    {
+      "type": "aws:cdk:analytics:mixin",
+      "data": {
+        "mixin": "aws-cdk-lib.aws_s3.mixins.BucketAutoDeleteObjects"
+      }
+    }
+  ],
+  "/FrontendStack/Custom::S3AutoDeleteObjectsCustomResourceProvider/Role": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/FrontendStack/Custom::S3AutoDeleteObjectsCustomResourceProvider/Handler": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CustomS3AutoDeleteObjectsCustomResourceProviderHandler9D90184F"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/FrontendStack/OAI/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "OAIE1EFC67F"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new OriginAccessIdentity2 in aws-cdk-lib...",
+        "new FrontendStack (C:\\Users\\Acer\\Documents\\claude\\todo-list-openspec\\infra\\lib\\frontend-stack.ts:17:17)",
+        "<anonymous> (C:\\Users\\Acer\\Documents\\claude\\todo-list-openspec\\infra\\bin\\app.ts:16:1)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/FrontendStack/Distribution/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "Distribution830FAC52"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Distribution2 in aws-cdk-lib...",
+        "new FrontendStack (C:\\Users\\Acer\\Documents\\claude\\todo-list-openspec\\infra\\lib\\frontend-stack.ts:20:26)",
+        "<anonymous> (C:\\Users\\Acer\\Documents\\claude\\todo-list-openspec\\infra\\bin\\app.ts:16:1)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/FrontendStack/CDKMetadata/Default": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CDKMetadata"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib, node internals...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/FrontendStack/FrontendBucket/Policy/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "FrontendBucketPolicy1DFF75D9"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Bucket2 in aws-cdk-lib...",
+        "new FrontendStack (C:\\Users\\Acer\\Documents\\claude\\todo-list-openspec\\infra\\lib\\frontend-stack.ts:11:20)",
+        "<anonymous> (C:\\Users\\Acer\\Documents\\claude\\todo-list-openspec\\infra\\bin\\app.ts:16:1)",
+        "...node internals..."
+      ]
+    },
+    {
+      "type": "aws:cdk:analytics:mixin",
+      "data": {
+        "mixin": "aws-cdk-lib.aws_s3.mixins.BucketPolicyStatements"
+      }
+    }
+  ],
+  "/FrontendStack/FrontendBucket/AutoDeleteObjectsCustomResource/Default": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "FrontendBucketAutoDeleteObjectsCustomResourceDB860B32"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ]
+}
