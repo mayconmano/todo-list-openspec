@@ -16,7 +16,7 @@
     {
       "type": "aws:cdk:creationStack",
       "data": [
-        "new IamStack (C:\\Users\\Acer\\Documents\\claude\\todo-list-openspec\\infra\\lib\\iam-stack.ts:37:23)",
+        "new IamStack (C:\\Users\\Acer\\Documents\\claude\\todo-list-openspec\\infra\\lib\\iam-stack.ts:40:23)",
         "<anonymous> (C:\\Users\\Acer\\Documents\\claude\\todo-list-openspec\\infra\\bin\\app.ts:17:1)",
         "...node internals, ts-node, ts-node..."
       ]
@@ -30,7 +30,7 @@
     {
       "type": "aws:cdk:creationStack",
       "data": [
-        "new IamStack (C:\\Users\\Acer\\Documents\\claude\\todo-list-openspec\\infra\\lib\\iam-stack.ts:41:5)",
+        "new IamStack (C:\\Users\\Acer\\Documents\\claude\\todo-list-openspec\\infra\\lib\\iam-stack.ts:44:5)",
         "<anonymous> (C:\\Users\\Acer\\Documents\\claude\\todo-list-openspec\\infra\\bin\\app.ts:17:1)",
         "...node internals, ts-node, ts-node..."
       ]
@@ -44,7 +44,7 @@
     {
       "type": "aws:cdk:creationStack",
       "data": [
-        "new IamStack (C:\\Users\\Acer\\Documents\\claude\\todo-list-openspec\\infra\\lib\\iam-stack.ts:46:5)",
+        "new IamStack (C:\\Users\\Acer\\Documents\\claude\\todo-list-openspec\\infra\\lib\\iam-stack.ts:49:5)",
         "<anonymous> (C:\\Users\\Acer\\Documents\\claude\\todo-list-openspec\\infra\\bin\\app.ts:17:1)",
         "...node internals, ts-node, ts-node..."
       ]

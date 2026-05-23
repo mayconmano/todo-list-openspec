@@ -30,6 +30,9 @@
         "iam:PutRolePolicy",
         "iam:DeleteRolePolicy",
         "iam:GetRolePolicy",
+        "iam:TagRole",
+        "iam:UntagRole",
+        "iam:ListRoleTags",
         "logs:*"
        ],
        "Effect": "Allow",
