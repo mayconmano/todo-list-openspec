@@ -1,0 +1,80 @@
+schema: spec-driven
+
+context: |
+  Projeto: Um sistema de gerenciamento de tarefas
+  Objetivo: Criar uma aplicação web para organizar e acompanhar tarefas pessoais e profissionais.
+  Backend:
+    - Serverless Framework
+    - Node.js 22
+    - TypeScript
+    - API REST
+    - JWT simples para autenticação
+    - Drizzle ORM
+    - MySQL
+  Frontend:
+    - React 18
+    - Vite
+    - TypeScript
+    - Tailwind CSS
+    - shadcn/ui
+    - React Router v6
+    - TanStack Query v5
+    - Zustand
+    - React Hook Form
+    - Zod
+  Infraestrutura:
+    - GitHub Actions para CI/CD
+    - AWS S3 + CloudFront para frontend
+    - Serverless Framework para backend       
+  Convenções gerais:
+    - Priorizar código simples, explícito e fácil de revisar
+    - Evitar abstrações prematuras
+    - Documentar decisões técnicas relevantes
+    - Manter consistência entre nomes usados na API, banco de dados e frontend
+    - Validar dados de entrada no backend
+    - Validar formulários no frontend com Zod
+    - Tratar erros de forma clara para o usuário
+    - Não expor informações sensíveis em mensagens de erro
+    - APIs devem retornar respostas previsíveis e documentadas
+    - Priorizar experiência do usuário e usabilidade
+    - Usuários só podem acessar, alterar ou excluir tarefas pertencentes a eles
+    - Todos os arquivos Markdown gerados pelo OpenSpec devem ser escritos em português do Brasil
+
+rules:
+  proposal:
+    - Explicar claramente o problema que a mudança resolve
+    - Descrever a solução proposta em alto nível
+    - Declarar o escopo da mudança
+    - Declarar explicitamente o que está fora do escopo
+    - Listar impactos em usuários, APIs, banco de dados, autenticação ou integrações
+    - Indicar riscos, trade-offs ou decisões técnicas relevantes
+    - Evitar misturar múltiplas funcionalidades grandes na mesma proposta
+
+  specs:
+    - Usar ADDED, MODIFIED e REMOVED Requirements
+    - Cada requisito deve descrever comportamento observável do sistema
+    - Evitar detalhes internos de implementação na spec
+    - Escrever cenários em Given/When/Then
+    - Incluir cenários de sucesso, erro e permissão quando aplicável
+    - Especificar comportamento para usuários autenticados e não autenticados quando relevante
+    - Especificar validações de entrada quando houver formulários ou endpoints
+    - Especificar respostas esperadas da API quando a mudança envolver backend
+    - Manter os requisitos pequenos, claros e testáveis
+    - Especificar regras de propriedade dos dados quando usuários acessarem tarefas
+
+  design:
+    - Explicar alternativas consideradas quando houver decisão técnica relevante
+    - Descrever impacto em frontend, backend, banco de dados e infraestrutura
+    - Documentar mudanças de schema do banco de dados quando existirem
+    - Documentar contratos de API novos ou alterados
+    - Indicar impactos em autenticação, autorização e segurança
+    - Preferir soluções simples antes de introduzir novas dependências
+
+  tasks:
+    - Quebrar implementação em passos pequenos e verificáveis
+    - Separar tarefas de backend, frontend, banco de dados, testes e documentação
+    - Incluir tarefas de teste para mudanças de comportamento
+    - Incluir tarefas de validação manual quando necessário
+    - Incluir migrações de banco quando houver alteração de schema
+    - Marcar dependências entre tarefas quando uma etapa depender de outra
+    - Evitar tarefas vagas como "implementar feature"; preferir tarefas específicas

@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(openspec instructions *)",
+      "Bash(openspec status *)",
+      "Bash(openspec list *)",
+      "Bash(openspec new *)",
+      "Bash(New-Item -ItemType Directory -Force \"openspec/changes/deploy-producao-cicd/specs/infrastructure-as-code\")",
+      "Bash(New-Item -ItemType Directory -Force \"openspec/changes/deploy-producao-cicd/specs/cicd-pipeline\")",
+      "Bash(New-Item -ItemType Directory -Force \"openspec/changes/deploy-producao-cicd/specs/project-structure\")",
+      "PowerShell(New-Item -ItemType Directory -Force \"c:\\\\Users\\\\Acer\\\\Documents\\\\claude\\\\todo-list-openspec\\\\openspec\\\\changes\\\\deploy-producao-cicd\\\\specs\\\\infrastructure-as-code\")",
+      "PowerShell(New-Item -ItemType Directory -Force \"c:\\\\Users\\\\Acer\\\\Documents\\\\claude\\\\todo-list-openspec\\\\openspec\\\\changes\\\\deploy-producao-cicd\\\\specs\\\\cicd-pipeline\")",
+      "PowerShell(New-Item -ItemType Directory -Force \"c:\\\\Users\\\\Acer\\\\Documents\\\\claude\\\\todo-list-openspec\\\\openspec\\\\changes\\\\deploy-producao-cicd\\\\specs\\\\project-structure\")"
+    ]
+  }
+}

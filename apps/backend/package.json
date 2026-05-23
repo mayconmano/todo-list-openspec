@@ -1,0 +1,29 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "serverless offline",
+    "build": "tsc",
+    "migrate": "drizzle-kit migrate"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "dotenv": "^16.4.0",
+    "drizzle-orm": "^0.30.0",
+    "jsonwebtoken": "^9.0.3",
+    "mysql2": "^3.9.0",
+    "serverless": "^3.38.0",
+    "serverless-offline": "^13.3.3"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.136",
+    "@types/bcryptjs": "^2.4.6",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/node": "^20.11.0",
+    "drizzle-kit": "^0.21.0",
+    "serverless-plugin-typescript": "^2.1.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.0"
+  }
+}

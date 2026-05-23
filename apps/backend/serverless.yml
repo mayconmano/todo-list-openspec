@@ -1,0 +1,82 @@
+service: todo-list-backend
+
+useDotenv: true
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+  stage: ${opt:stage, 'local'}
+  region: ${opt:region, 'us-east-1'}
+  environment:
+    DB_HOST: ${env:DB_HOST}
+    DB_PORT: ${env:DB_PORT}
+    DB_USER: ${env:DB_USER}
+    DB_PASSWORD: ${env:DB_PASSWORD}
+    DB_NAME: ${env:DB_NAME}
+    JWT_SECRET: ${env:JWT_SECRET}
+
+plugins:
+  - serverless-plugin-typescript
+  - serverless-offline
+
+custom:
+  serverless-offline:
+    httpPort: 3001
+    noPrependStageInUrl: true
+
+functions:
+  health:
+    handler: src/handlers/health.handler
+    events:
+      - http:
+          path: /health
+          method: get
+  register:
+    handler: src/handlers/auth/register.handler
+    events:
+      - http:
+          path: /auth/register
+          method: post
+          cors: true
+  login:
+    handler: src/handlers/auth/login.handler
+    events:
+      - http:
+          path: /auth/login
+          method: post
+          cors: true
+  me:
+    handler: src/handlers/auth/me.handler
+    events:
+      - http:
+          path: /auth/me
+          method: get
+          cors: true
+  listTodos:
+    handler: src/handlers/todos/list.handler
+    events:
+      - http:
+          path: /todos
+          method: get
+          cors: true
+  createTodo:
+    handler: src/handlers/todos/create.handler
+    events:
+      - http:
+          path: /todos
+          method: post
+          cors: true
+  updateTodo:
+    handler: src/handlers/todos/update.handler
+    events:
+      - http:
+          path: /todos/{id}
+          method: patch
+          cors: true
+  deleteTodo:
+    handler: src/handlers/todos/delete.handler
+    events:
+      - http:
+          path: /todos/{id}
+          method: delete
+          cors: true
