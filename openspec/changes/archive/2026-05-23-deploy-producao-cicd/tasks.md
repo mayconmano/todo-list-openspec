@@ -87,14 +87,14 @@
 
 ## 12. Validação do pipeline
 
-- [ ] 12.1 Fazer push na branch `main` e acompanhar execução dos workflows no GitHub Actions
-- [ ] 12.2 Verificar que o workflow do backend conclui sem erros (migrações + deploy)
-- [ ] 12.3 Verificar que o workflow do frontend conclui sem erros (build + S3 sync + CF invalidate)
-- [ ] 12.4 Acessar a URL do CloudFront no browser e verificar que o frontend carrega
-- [ ] 12.5 Fazer login e criar uma tarefa para validar integração frontend ↔ backend ↔ banco
+- [x] 12.1 Fazer push na branch `main` e acompanhar execução dos workflows no GitHub Actions
+- [x] 12.2 Verificar que o workflow do backend conclui sem erros (migrações + deploy)
+- [x] 12.3 Verificar que o workflow do frontend conclui sem erros (build + S3 sync + CF invalidate)
+- [x] 12.4 Acessar a URL do CloudFront no browser e verificar que o frontend carrega
+- [x] 12.5 Fazer login e criar uma tarefa para validar integração frontend ↔ backend ↔ banco
 
 ## 13. Pós-deploy — Restringir CORS
 
-- [ ] 13.1 Atualizar `apps/backend/serverless.yml`: substituir `origin: '*'` pela URL do CloudFront
-- [ ] 13.2 Fazer push na `main` para acionar redeploy do backend com CORS restrito
-- [ ] 13.3 Verificar que o frontend continua funcionando corretamente após a restrição de CORS
+- [x] 13.1 Atualizar `apps/backend/serverless.yml`: substituir `origin: '*'` pela URL do CloudFront
+- [x] 13.2 Fazer push na `main` para acionar redeploy do backend com CORS restrito
+- [x] 13.3 Verificar que o frontend continua funcionando corretamente após a restrição de CORS
