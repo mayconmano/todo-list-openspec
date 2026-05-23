@@ -220,14 +220,45 @@ O sistema SHALL oferecer presets semânticos de data (Hoje, Esta semana, Atrasad
 
 ---
 
+## Requirement: Backend expõe estatísticas de tarefas da semana
+
+O sistema SHALL implementar `GET /todos/stats` retornando a contagem de tarefas do usuário autenticado cuja `due_date` esteja na semana calendário atual (segunda-feira a domingo).
+
+### Scenario: Stats retornadas corretamente
+
+- **WHEN** um usuário autenticado faz `GET /todos/stats`
+- **THEN** o sistema SHALL retornar HTTP 200 com `{ total: number, pending: number, completed: number }` contando apenas tarefas do usuário com `due_date` na semana atual
+
+### Scenario: Isolamento por usuário
+
+- **WHEN** dois usuários diferentes fazem `GET /todos/stats`
+- **THEN** cada um SHALL receber contagens apenas de suas próprias tarefas
+
+### Scenario: Sem autenticação
+
+- **WHEN** `GET /todos/stats` é chamado sem token JWT válido
+- **THEN** o sistema SHALL retornar HTTP 401 com `{ error: "Não autorizado" }`
+
+### Scenario: Cálculo da semana calendário
+
+- **WHEN** `GET /todos/stats` é processado em qualquer dia da semana
+- **THEN** o sistema SHALL calcular `weekStart` como segunda-feira da semana atual às 00:00:00 e `weekEnd` como domingo da semana atual às 23:59:59
+
+---
+
 ## Requirement: Frontend exibe página de gerenciamento de tarefas
 
-O sistema SHALL exibir a página de tarefas com header contendo logotipo, email do usuário, controle de tema e botão de logout. A listagem de tarefas SHALL apresentar animações de entrada e saída nos itens. O sistema SHALL utilizar checkbox customizado com animação de preenchimento e escala ao marcar/desmarcar uma tarefa.
+O sistema SHALL exibir a página de tarefas na rota `/tarefas` (anteriormente `/todos`) dentro do `AppLayout` com sidebar. O header standalone da página SHALL ser removido, pois a navegação e o logout passam a ser responsabilidade da sidebar.
 
-### Scenario: Layout do header da página de tarefas
+### Scenario: Acesso à rota de tarefas
 
-- **WHEN** o usuário acessa a página `/todos` autenticado
-- **THEN** o header SHALL exibir o logotipo "✦ Todo" à esquerda, e à direita o email do usuário, o controle de alternância de tema e o botão "Sair"
+- **WHEN** o usuário autenticado acessa `/tarefas`
+- **THEN** o sistema SHALL exibir a listagem de tarefas dentro do layout com sidebar, sem header próprio
+
+### Scenario: Redirecionamento de rota legada
+
+- **WHEN** o usuário acessa `/todos`
+- **THEN** o sistema SHALL redirecionar para `/tarefas`
 
 ### Scenario: Animação de entrada de nova tarefa
 
@@ -247,7 +278,7 @@ O sistema SHALL exibir a página de tarefas com header contendo logotipo, email 
 ### Scenario: Hover em item da lista de tarefas
 
 - **WHEN** o usuário passa o cursor sobre um item da lista
-- **THEN** o item SHALL exibir destaque visual sutil (fundo levemente diferenciado) com transição suave
+- **THEN** o item SHALL exibir destaque visual sutil com transição suave
 
 ### Scenario: Filtros de status com estado ativo visual
 
