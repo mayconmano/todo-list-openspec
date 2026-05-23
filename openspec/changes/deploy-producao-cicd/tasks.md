@@ -59,7 +59,7 @@
 - [x] 9.3 Adicionar step `npm install` em `apps/backend/`
 - [x] 9.4 Adicionar step de migração Drizzle: `npm run migrate` com variáveis de ambiente vindas dos GitHub Secrets
 - [x] 9.5 Adicionar step de deploy: `npx serverless deploy --stage prod` com variáveis AWS e de banco via secrets
-- [ ] 9.6 Anotar a URL da API Gateway gerada no output do deploy
+- [x] 9.6 Anotar a URL da API Gateway gerada no output do deploy
 
 ## 10. GitHub Actions — Workflow do frontend
 
@@ -81,7 +81,7 @@
 - [x] 11.7 Adicionar secret `DB_PASSWORD` com a senha do RDS
 - [x] 11.8 Adicionar secret `DB_NAME` com valor `todo_list`
 - [x] 11.9 Adicionar secret `JWT_SECRET` com valor seguro gerado aleatoriamente
-- [ ] 11.10 Adicionar secret `VITE_API_URL` com a URL da API Gateway (obtida após primeiro deploy do backend)
+- [x] 11.10 Adicionar secret `VITE_API_URL` com a URL da API Gateway (obtida após primeiro deploy do backend)
 - [x] 11.11 Adicionar secret `S3_BUCKET_NAME` com o nome do bucket criado pela `FrontendStack`
 - [x] 11.12 Adicionar secret `CLOUDFRONT_DISTRIBUTION_ID` com o ID da distribuição CloudFront
 
