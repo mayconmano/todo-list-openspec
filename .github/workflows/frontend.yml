@@ -3,6 +3,10 @@ name: Deploy Frontend
 on:
   push:
     branches: [main]
+    paths:
+      - 'apps/frontend/**'
+      - 'tsconfig.base.json'
+      - '.github/workflows/frontend.yml'
 
 jobs:
   deploy:
