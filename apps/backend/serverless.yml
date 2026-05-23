@@ -14,6 +14,7 @@ provider:
     DB_PASSWORD: ${env:DB_PASSWORD}
     DB_NAME: ${env:DB_NAME}
     JWT_SECRET: ${env:JWT_SECRET}
+    CORS_ORIGIN: ${env:CORS_ORIGIN, '*'}
 
 plugins:
   - serverless-esbuild
@@ -45,46 +46,53 @@ functions:
       - http:
           path: /auth/register
           method: post
-          cors: true
+          cors:
+            origin: ${env:CORS_ORIGIN, '*'}
   login:
     handler: src/handlers/auth/login.handler
     events:
       - http:
           path: /auth/login
           method: post
-          cors: true
+          cors:
+            origin: ${env:CORS_ORIGIN, '*'}
   me:
     handler: src/handlers/auth/me.handler
     events:
       - http:
           path: /auth/me
           method: get
-          cors: true
+          cors:
+            origin: ${env:CORS_ORIGIN, '*'}
   listTodos:
     handler: src/handlers/todos/list.handler
     events:
       - http:
           path: /todos
           method: get
-          cors: true
+          cors:
+            origin: ${env:CORS_ORIGIN, '*'}
   createTodo:
     handler: src/handlers/todos/create.handler
     events:
       - http:
           path: /todos
           method: post
-          cors: true
+          cors:
+            origin: ${env:CORS_ORIGIN, '*'}
   updateTodo:
     handler: src/handlers/todos/update.handler
     events:
       - http:
           path: /todos/{id}
           method: patch
-          cors: true
+          cors:
+            origin: ${env:CORS_ORIGIN, '*'}
   deleteTodo:
     handler: src/handlers/todos/delete.handler
     events:
       - http:
           path: /todos/{id}
           method: delete
-          cors: true
+          cors:
+            origin: ${env:CORS_ORIGIN, '*'}

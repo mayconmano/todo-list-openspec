@@ -5,6 +5,8 @@
   "scripts": {
     "dev": "serverless offline",
     "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "test": "echo \"No tests yet\" && exit 0",
     "migrate": "node scripts/migrate.js"
   },
   "dependencies": {

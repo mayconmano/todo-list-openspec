@@ -35,10 +35,10 @@ export const handler = withAuth(async (event) => {
     conditions.push(isNull(schema.todos.due_date));
   } else {
     if (dueDateFrom) {
-      conditions.push(gte(schema.todos.due_date, dueDateFrom));
+      conditions.push(gte(schema.todos.due_date, new Date(dueDateFrom)));
     }
     if (dueDateTo) {
-      conditions.push(lte(schema.todos.due_date, dueDateTo));
+      conditions.push(lte(schema.todos.due_date, new Date(dueDateTo)));
     }
   }
 

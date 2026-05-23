@@ -21,8 +21,21 @@ jobs:
           node-version: '20'
 
       - name: Install dependencies
-        working-directory: apps/backend
         run: npm install
+
+      - name: Run check
+        run: npm run check
+
+      - name: Validate env vars
+        env:
+          DB_HOST: ${{ secrets.DB_HOST }}
+          DB_PORT: ${{ secrets.DB_PORT }}
+          DB_USER: ${{ secrets.DB_USER }}
+          DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+          DB_NAME: ${{ secrets.DB_NAME }}
+          JWT_SECRET: ${{ secrets.JWT_SECRET }}
+          CORS_ORIGIN: ${{ secrets.CORS_ORIGIN }}
+        run: node apps/backend/scripts/validate-env.js
 
       - name: Run Drizzle migrations
         working-directory: apps/backend
@@ -46,4 +59,5 @@ jobs:
           DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
           DB_NAME: ${{ secrets.DB_NAME }}
           JWT_SECRET: ${{ secrets.JWT_SECRET }}
+          CORS_ORIGIN: ${{ secrets.CORS_ORIGIN }}
         run: npx serverless deploy --stage prod

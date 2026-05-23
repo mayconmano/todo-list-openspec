@@ -14,7 +14,9 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     try {
       const stored = localStorage.getItem('theme');
       if (stored === 'light' || stored === 'dark') return stored;
-    } catch (_) {}
+    } catch (_) {
+      // ignore storage errors
+    }
     return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
   });
 
@@ -27,7 +29,9 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     }
     try {
       localStorage.setItem('theme', theme);
-    } catch (_) {}
+    } catch (_) {
+      // ignore storage errors
+    }
   }, [theme]);
 
   function toggleTheme() {

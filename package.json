@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "concurrently \"npm -w apps/frontend run dev\" \"npm -w apps/backend run dev\"",
     "lint": "eslint . --ext .ts,.tsx",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "check": "npm run lint && npm -w apps/backend run typecheck && npm -w apps/frontend run build && npm -w apps/backend run test"
   },
   "devDependencies": {
     "concurrently": "^8.2.0",

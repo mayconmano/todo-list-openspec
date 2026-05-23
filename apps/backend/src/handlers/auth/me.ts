@@ -1,10 +1,9 @@
-import type { Context } from 'aws-lambda';
 import { eq } from 'drizzle-orm';
 import { db, schema } from '../../db';
 import { withAuth, type AuthenticatedEvent } from '../../middleware/withAuth';
 import { json } from '../../lib/response';
 
-const meHandler = async (event: AuthenticatedEvent, _context: Context) => {
+const meHandler = async (event: AuthenticatedEvent) => {
   const [user] = await db
     .select({
       id: schema.users.id,

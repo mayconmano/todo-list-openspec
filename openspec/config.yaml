@@ -5,7 +5,7 @@ context: |
   Objetivo: Criar uma aplicação web para organizar e acompanhar tarefas pessoais e profissionais.
   Backend:
     - Serverless Framework
-    - Node.js 22
+    - Node.js 20
     - TypeScript
     - API REST
     - JWT simples para autenticação
