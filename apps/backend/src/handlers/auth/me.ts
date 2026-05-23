@@ -1,13 +1,8 @@
-import type { APIGatewayProxyResult, Context } from 'aws-lambda';
+import type { Context } from 'aws-lambda';
 import { eq } from 'drizzle-orm';
 import { db, schema } from '../../db';
 import { withAuth, type AuthenticatedEvent } from '../../middleware/withAuth';
-
-const json = (statusCode: number, body: unknown): APIGatewayProxyResult => ({
-  statusCode,
-  headers: { 'Content-Type': 'application/json' },
-  body: JSON.stringify(body),
-});
+import { json } from '../../lib/response';
 
 const meHandler = async (event: AuthenticatedEvent, _context: Context) => {
   const [user] = await db

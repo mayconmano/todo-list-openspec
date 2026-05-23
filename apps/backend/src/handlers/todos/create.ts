@@ -1,12 +1,7 @@
 import { eq } from 'drizzle-orm';
 import { db, schema } from '../../db';
 import { withAuth } from '../../middleware/withAuth';
-
-const json = (statusCode: number, body: unknown) => ({
-  statusCode,
-  headers: { 'Content-Type': 'application/json' },
-  body: JSON.stringify(body),
-});
+import { json } from '../../lib/response';
 
 export const handler = withAuth(async (event) => {
   let body: { title?: unknown; description?: unknown; due_date?: unknown };

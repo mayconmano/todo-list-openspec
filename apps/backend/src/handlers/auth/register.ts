@@ -3,12 +3,7 @@ import bcrypt from 'bcryptjs';
 import { eq } from 'drizzle-orm';
 import { db, schema } from '../../db';
 import { signToken } from '../../lib/jwt';
-
-const json = (statusCode: number, body: unknown) => ({
-  statusCode,
-  headers: { 'Content-Type': 'application/json' },
-  body: JSON.stringify(body),
-});
+import { json } from '../../lib/response';
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 

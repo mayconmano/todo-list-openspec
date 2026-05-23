@@ -1,12 +1,7 @@
 import { and, eq, like, isNull, gte, lte, count, desc } from 'drizzle-orm';
 import { db, schema } from '../../db';
 import { withAuth } from '../../middleware/withAuth';
-
-const json = (statusCode: number, body: unknown) => ({
-  statusCode,
-  headers: { 'Content-Type': 'application/json' },
-  body: JSON.stringify(body),
-});
+import { json } from '../../lib/response';
 
 export const handler = withAuth(async (event) => {
   const q = event.queryStringParameters ?? {};

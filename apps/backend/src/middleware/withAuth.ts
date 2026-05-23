@@ -1,5 +1,6 @@
 import type { APIGatewayProxyEvent, APIGatewayProxyResult, Context } from 'aws-lambda';
 import { verifyToken, type JwtPayload } from '../lib/jwt';
+import { json } from '../lib/response';
 
 export interface AuthenticatedEvent extends APIGatewayProxyEvent {
   user: JwtPayload;
@@ -10,11 +11,7 @@ type AuthenticatedHandler = (
   context: Context
 ) => Promise<APIGatewayProxyResult>;
 
-const unauthorized = {
-  statusCode: 401,
-  headers: { 'Content-Type': 'application/json' },
-  body: JSON.stringify({ error: 'Não autorizado' }),
-};
+const unauthorized = json(401, { error: 'Não autorizado' });
 
 export const withAuth =
   (handler: AuthenticatedHandler) =>
